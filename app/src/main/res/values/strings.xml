@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">CapstoneSportAppRevoke</string>
+    <string name="favorite_fragment_label">Favorite Sport</string>
+    <string name="menu_home">Sport</string>
+    <string name="subject">Subject</string>
+    <string name="your_message">Your Message…</string>
+    <string name="submit">Submit</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="blue_background">blue background</string>
+    <string name="detail_seen">Detail Seen</string>
+    <string name="total_default">0</string>
+    <string name="total_sports">Total Teams</string>
+    <string name="whoops">Whoops…!!</string>
+    <string name="empty_data">The data is empty!</string>
+    <string name="error_application_content">Something went wrong!! Please try again later</string>
+    <string name="seen">seen</string>
+    <string name="sport_title">Sport Title</string>
+    <string name="error_image_desc">error image shown when error appears</string>
+    <string name="home_event_sport">Event Sport</string>
+    <string name="home_team_sport">Team Vs Team</string>
+    <string name="menu_search_title">Search Sport</string>
+    <string name="map_box_access_token">pk.eyJ1IjoibWFyZmluZmFkaGlsYWgiLCJhIjoiY2tyN3pjMXNpMHN5bTJxbHBtMnIzZXA0dCJ9.sOzcHjtKIFYH_U6Bc5zlOA</string>
+
+    <string name="empty_favorite_item">The favorite item is empty!</string>
+    <string name="filter_by_map">Filter by map</string>
+
+    <string name="app_name">Sports</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="detail_content_default">Long text Long text Long text Long text Long text
+    Long text Long text Long text Long text Long text Long text Long text Long text Long text
+    Long text Long text Long text Long text Long text Long text Long text Long text Long text
+    Long text </string>
+    <string name="favorite_image_desc">Favorite Image with heart icon</string>
+    <string name="share_image_desc">Share image which can share your favorite sport to external apps</string>
+    <string name="sport_image_desc">sport team emblem</string>
 </resources>
