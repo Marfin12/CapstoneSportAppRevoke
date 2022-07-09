@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_checklist.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-v24/ic_favorite_full.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_sport.xml" value="0.1" />
+        <entry key="app/src/main/res/font/abhaya_libre.xml" value="0.13333333333333333" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.24770642201834864" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/detail_card_image.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/detail_content.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/favorite_fragment_empty.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_empty.xml" value="0.11550151975683891" />
+        <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.6491935483870968" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.125" />
         <entry key="app/src/main/res/layout/home_fragment_error.xml" value="0.11550151975683891" />
         <entry key="app/src/main/res/layout/home_fragment_event_sport.xml" value="0.1275992438563327" />
@@ -13,6 +21,7 @@
         <entry key="app/src/main/res/layout/home_fragment_team_vs_team.xml" value="0.19285714285714287" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.11550151975683891" />
+        <entry key="app/src/main/res/menu/detail_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18796296296296297" />
       </map>

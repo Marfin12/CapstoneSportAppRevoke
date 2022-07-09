@@ -10,8 +10,23 @@
         android:name="com.example.capstonesportapprevoke.home.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
-<!--        <action-->
-<!--            android:id="@+id/action_homeFragment_to_detailActivity"-->
-<!--            app:destination="@id/detailActivity" />-->
+        <action
+            android:id="@+id/action_homeFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.capstonesportapprevoke.favorite.FavoriteFragment"
+        android:label="@string/favorite_fragment_label"
+        tools:layout="@layout/fragment_favorite" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.example.capstonesportapprevoke.detail.DetailActivity"
+        android:label="activity_detail"
+        tools:layout="@layout/activity_detail" >
+    </activity>
 </navigation>
