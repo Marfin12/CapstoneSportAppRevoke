@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstonesportapprevoke.core.domain.usecase.SportUseCase
-import com.example.capstonesportapprevoke.core.factory.Injection.provideTourismUseCase
+import com.example.capstonesportapprevoke.core.factory.Injection.provideSportUseCase
 import com.example.capstonesportapprevoke.detail.DetailViewModel
 import com.example.capstonesportapprevoke.favorite.FavoriteViewModel
 import com.example.capstonesportapprevoke.home.HomeViewModel
@@ -19,7 +19,7 @@ class ViewModelFactory private constructor(private val sportUseCase: SportUseCas
         fun getInstance(context: Context): ViewModelFactory =
             instance ?: synchronized(this) {
                 instance ?: ViewModelFactory(
-                    provideTourismUseCase(context)
+                    provideSportUseCase(context)
                 )
             }
     }

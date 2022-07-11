@@ -31,7 +31,7 @@ object Injection {
         return SportRepository.getInstance(remoteDataSource, localDataSource, appExecutors, okHttpClient)
     }
 
-    fun provideTourismUseCase(context: Context): SportUseCase {
+    fun provideSportUseCase(context: Context): SportUseCase {
         val repository = provideRepository(context)
         return SportInteractor(repository)
     }

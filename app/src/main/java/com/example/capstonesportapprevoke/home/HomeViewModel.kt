@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import com.example.capstonesportapprevoke.core.data.Resource
+import com.example.capstonesportapprevoke.core.data.source.remote.network.ApiConfig
 import com.example.capstonesportapprevoke.core.domain.model.Country
 import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.core.domain.usecase.SportUseCase
@@ -44,17 +45,17 @@ class HomeViewModel(private val sportUseCase: SportUseCase) : ViewModel() {
     @ExperimentalCoroutinesApi
     val queryChannel = BroadcastChannel<String>(Channel.CONFLATED)
 
-//    @ExperimentalCoroutinesApi
-//    @FlowPreview
-//    val searchResult = queryChannel.asFlow()
-//        .debounce(300)
-//        .distinctUntilChanged()
-//        .filter {
-//            it.trim().isNotEmpty()
-//        }
-//        .mapLatest {
-//            ApiConfig.provideApiService(sportUseCase.getHttpClient()).searchTeam(it).team
-//        }
-//        .asLiveData()
+    @ExperimentalCoroutinesApi
+    @FlowPreview
+    val searchResult = queryChannel.asFlow()
+        .debounce(300)
+        .distinctUntilChanged()
+        .filter {
+            it.trim().isNotEmpty()
+        }
+        .mapLatest {
+            ApiConfig.provideApiService(sportUseCase.getHttpClient()).searchTeam(it).team
+        }
+        .asLiveData()
 
 }
