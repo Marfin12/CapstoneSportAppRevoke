@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiConfig {
     fun provideApiService(httpClient: OkHttpClient): ApiService {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://www.thesportsdb.com/api/v1/json/1/")
+            .baseUrl("https://www.thesportsdb.com/api/v1/json/2/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(httpClient)
             .build()

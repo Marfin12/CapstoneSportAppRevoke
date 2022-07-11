@@ -54,7 +54,7 @@ open class CountryAdapter : RecyclerView.Adapter<CountryAdapter.ListViewHolder>(
                 if (position == defaultCountryIdx)
                     cardEventSportCard.setBackgroundColor(context.resources.getColor(com.google.android.material.R.color.material_on_surface_stroke, context.theme))
                 else
-                    cardEventSportCard.setBackgroundColor(context.resources.getColor(com.google.android.material.R.color.material_dynamic_primary0, context.theme))
+                    cardEventSportCard.setBackgroundColor(context.resources.getColor(com.google.android.material.R.color.m3_ref_palette_white, context.theme))
 
                 txtSportName.text = data.name_en
             }

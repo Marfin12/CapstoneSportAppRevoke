@@ -55,6 +55,12 @@ class FavoriteFragment : Fragment() {
                 favoriteViewModel.favoriteTeam.observe(viewLifecycleOwner) { teamData ->
                     teamFavoriteSportAdapter.setData(teamData)
 
+                    if (teamData.isNotEmpty()) {
+                        incFavoriteFragmentEmpty.emptyFavoriteData.visibility = View.GONE
+                    } else {
+                        incFavoriteFragmentEmpty.emptyFavoriteData.visibility = View.VISIBLE
+                    }
+
                     recyclerView.layoutManager = GridLayoutManager(context, 1)
                     recyclerView.adapter = teamFavoriteSportAdapter
                 }
