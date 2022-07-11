@@ -1,6 +1,5 @@
 package com.example.capstonesportapprevoke.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
@@ -19,6 +18,7 @@ import com.example.capstonesportapprevoke.core.ui.SportAdapter
 import com.example.capstonesportapprevoke.core.ui.SportAdapter.Companion.defaultSportIdx
 import com.example.capstonesportapprevoke.core.ui.TeamSearchAdapter
 import com.example.capstonesportapprevoke.core.ui.TeamSportAdapter
+import com.example.capstonesportapprevoke.core.utils.FragmentUtils
 import com.example.capstonesportapprevoke.databinding.FragmentHomeBinding
 import com.example.capstonesportapprevoke.detail.DetailActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -332,9 +332,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun teamItemClick(selectedTeamData: Team) {
-        val intent = Intent(activity, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.TEAM_DATA, selectedTeamData)
-        startActivity(intent)
+        FragmentUtils.goToDetailScreen(selectedTeamData, this)
     }
 
     private fun autoCompleteItemClick(selectedText: String, searchView: SearchView) {

@@ -28,5 +28,8 @@
         android:name="com.example.capstonesportapprevoke.detail.DetailActivity"
         android:label="activity_detail"
         tools:layout="@layout/activity_detail" >
+        <argument
+            android:name="teamData"
+            app:argType="com.example.capstonesportapprevoke.core.domain.model.Team" />
     </activity>
 </navigation>

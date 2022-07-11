@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.domain.model.Team
@@ -15,9 +16,7 @@ import kotlin.properties.Delegates
 
 class DetailActivity : AppCompatActivity() {
 
-    companion object {
-        const val TEAM_DATA = "team_data"
-    }
+    private val args : DetailActivityArgs by navArgs()
 
     private var isFavorite by Delegates.notNull<Boolean>()
 
@@ -36,7 +35,7 @@ class DetailActivity : AppCompatActivity() {
         val factory = ViewModelFactory.getInstance(this)
         detailViewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
 
-        teamDetail = intent.getParcelableExtra(TEAM_DATA)!!
+        teamDetail = args.teamData
         showSportDetail()
     }
 

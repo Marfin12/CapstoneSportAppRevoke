@@ -27,6 +27,15 @@ buildscript {
     ext.shimmer_version = "0.5.0"
     ext.mapbox_version = "9.2.0"
     ext.mapbox_annotation_version = "0.8.0"
+
+    ext.navigation_version = '1.0.0-alpha11'
+
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
 }
 
 plugins {

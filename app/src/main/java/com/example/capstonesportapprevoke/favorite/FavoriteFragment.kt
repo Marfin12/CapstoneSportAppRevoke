@@ -12,6 +12,9 @@ import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.core.ui.TeamFavoriteSportAdapter
 import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
 import com.example.capstonesportapprevoke.detail.DetailActivity
+import androidx.navigation.fragment.findNavController
+import com.example.capstonesportapprevoke.core.domain.model.Team
+import com.example.capstonesportapprevoke.core.utils.FragmentUtils.goToDetailScreen
 
 class FavoriteFragment : Fragment() {
 
@@ -39,10 +42,7 @@ class FavoriteFragment : Fragment() {
                 val teamFavoriteSportAdapter = TeamFavoriteSportAdapter()
 
                 teamFavoriteSportAdapter.onItemClick = { selectedData ->
-                    val intent = Intent(activity, DetailActivity::class.java)
-
-                    intent.putExtra(DetailActivity.TEAM_DATA, selectedData)
-                    startActivity(intent)
+                    goToDetailScreen(selectedData, this@FavoriteFragment)
                 }
 
                 val factory = ViewModelFactory.getInstance(requireActivity())
