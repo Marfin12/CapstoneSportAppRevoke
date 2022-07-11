@@ -33,7 +33,7 @@ interface SportDao {
     suspend fun insertCountry(country: List<CountryEntity>)
 
 
-    @Query("SELECT * FROM team where isFavorite = 1")
+    @Query("SELECT * FROM team where isFavorite = 1 and isSeen = 1")
     fun getFavoriteTeam(): Flow<List<TeamEntity>>
 
     @Query("SELECT * FROM team where isSeen = 1")

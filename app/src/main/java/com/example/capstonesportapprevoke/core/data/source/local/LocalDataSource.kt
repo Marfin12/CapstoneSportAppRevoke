@@ -38,6 +38,7 @@ class LocalDataSource(private val sportDao: SportDao) {
 
     fun setFavoriteTeam(team: TeamEntity, newState: Boolean) {
         team.isFavorite = newState
+        team.isSeen = newState
         sportDao.updateTeam(team)
     }
 
