@@ -74,7 +74,7 @@ class DetailActivity : AppCompatActivity() {
                 setStatusFavorite(isFavorite)
             }
             else -> {
-                findNavController(R.id.detailActivity).popBackStack()
+                findNavController(item.actionView.id).popBackStack()
             }
         }
         return super.onOptionsItemSelected(item)
