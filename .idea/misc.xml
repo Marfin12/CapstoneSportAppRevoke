@@ -26,8 +26,11 @@
         <entry key="app/src/main/res/layout/item_country.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_event_sport.xml" value="0.52734375" />
         <entry key="app/src/main/res/layout/item_favorite.xml" value="0.6491935483870968" />
+        <entry key="app/src/main/res/layout/item_team_vs_team.xml" value="0.1" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.11550151975683891" />
+        <entry key="app/src/main/res/layout/placeholder_list_country.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/sport_list_placeholder.xml" value="0.1" />
         <entry key="app/src/main/res/menu/detail_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18796296296296297" />

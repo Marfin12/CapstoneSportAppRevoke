@@ -26,32 +26,32 @@
         app:layout_constraintTop_toBottomOf="@id/txtTeamVsTeam"
         tools:context=".home.HomeFragment">
 
-<!--        <com.facebook.shimmer.ShimmerFrameLayout-->
-<!--            android:id="@+id/teamProgressBar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:shimmer_auto_start="true">-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/activity_vertical_margin"-->
-<!--                android:orientation="vertical">-->
-<!--                    <include layout="@layout/sport_list_placeholder" />-->
-<!--                    <include layout="@layout/sport_list_placeholder" />-->
-<!--            </LinearLayout>-->
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="250dp"-->
-<!--                android:orientation="vertical">-->
-<!--                    <include layout="@layout/sport_list_placeholder" />-->
-<!--                    <include layout="@layout/sport_list_placeholder" />-->
-<!--            </LinearLayout>-->
-<!--        </com.facebook.shimmer.ShimmerFrameLayout>-->
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/teamProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shimmer_auto_start="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+                    <include layout="@layout/placeholder_list_sport" />
+                    <include layout="@layout/placeholder_list_sport" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:orientation="vertical">
+                    <include layout="@layout/placeholder_list_sport" />
+                    <include layout="@layout/placeholder_list_sport" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/teamRecyclerView"
