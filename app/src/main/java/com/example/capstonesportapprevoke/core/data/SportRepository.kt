@@ -24,6 +24,21 @@ class SportRepository(
     private val okHttpClient: OkHttpClient
 ) : ISportRepository {
 
+    companion object {
+        @Volatile
+        private var instance: SportRepository? = null
+
+        fun getInstance(
+            remoteData: RemoteDataSource,
+            localData: LocalDataSource,
+            appExecutors: AppExecutors,
+            okHttpClient: OkHttpClient
+        ): SportRepository =
+            instance ?: synchronized(this) {
+                instance ?: SportRepository(remoteData, localData, appExecutors, okHttpClient)
+            }
+    }
+
     override fun getAllSport(): Flow<Resource<List<Sport>>> =
         object : NetworkBoundResource<List<Sport>, List<SportResponse>>() {
             override fun loadFromDB(): Flow<List<Sport>> {

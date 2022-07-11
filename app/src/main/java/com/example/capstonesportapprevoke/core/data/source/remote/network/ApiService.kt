@@ -6,7 +6,7 @@ import com.example.capstonesportapprevoke.core.data.source.remote.response.ListT
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface SportApiService {
+interface ApiService {
     @GET("all_sports.php")
     suspend fun getSportList(): ListSportResponse
 

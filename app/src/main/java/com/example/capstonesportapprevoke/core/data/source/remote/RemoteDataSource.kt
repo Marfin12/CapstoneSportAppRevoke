@@ -2,7 +2,7 @@ package com.example.capstonesportapprevoke.core.data.source.remote
 
 import android.util.Log
 import com.example.capstonesportapprevoke.core.data.source.remote.network.ApiResponse
-import com.example.capstonesportapprevoke.core.data.source.remote.network.SportApiService
+import com.example.capstonesportapprevoke.core.data.source.remote.network.ApiService
 import com.example.capstonesportapprevoke.core.data.source.remote.response.CountryResponse
 import com.example.capstonesportapprevoke.core.data.source.remote.response.SportResponse
 import com.example.capstonesportapprevoke.core.data.source.remote.response.TeamResponse
@@ -11,12 +11,21 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class RemoteDataSource(private val sportApiService: SportApiService) {
+class RemoteDataSource(private val apiService: ApiService) {
+    companion object {
+        @Volatile
+        private var instance: RemoteDataSource? = null
+
+        fun getInstance(service: ApiService): RemoteDataSource =
+            instance ?: synchronized(this) {
+                instance ?: RemoteDataSource(service)
+            }
+    }
 
     suspend fun getAllSport(): Flow<ApiResponse<List<SportResponse>>> {
         return flow {
             try {
-                val response = sportApiService.getSportList()
+                val response = apiService.getSportList()
                 val dataArray = response.sports
                 val dataFilter = dataArray.filter { it.category == "TeamvsTeam"}
                 if (dataFilter.isNotEmpty()){
@@ -34,7 +43,7 @@ class RemoteDataSource(private val sportApiService: SportApiService) {
     suspend fun getAllCountry(): Flow<ApiResponse<List<CountryResponse>>> {
         return flow {
             try {
-                val response = sportApiService.getCountryList()
+                val response = apiService.getCountryList()
                 val dataArray = response.countries
                 if (dataArray.isNotEmpty()){
                     emit(ApiResponse.Success(dataArray))
@@ -51,13 +60,13 @@ class RemoteDataSource(private val sportApiService: SportApiService) {
     suspend fun getTeamFromCountry(countryName: String): Flow<ApiResponse<List<TeamResponse>>> { //di panggil ketika resource.success di homeviewmode
         return flow {
             try {
-                val sportResponse = sportApiService.getSportList()
+                val sportResponse = apiService.getSportList()
                 val sportArray = sportResponse.sports
                 val sportFilter = sportArray.filter { it.category == "TeamvsTeam"}
                 if (sportFilter.isNotEmpty()) {
                     val teamList = ArrayList<TeamResponse>()
                     sportFilter.map { sport ->
-                        val teamResponse = sportApiService.getTeamList(countryName, sport.name)
+                        val teamResponse = apiService.getTeamList(countryName, sport.name)
                         if (teamResponse.team != null) {
                             teamResponse.team.filter { it.description == null }.map {
                                 it.description = "Description is not available yet!"
@@ -81,7 +90,7 @@ class RemoteDataSource(private val sportApiService: SportApiService) {
     suspend fun searchTeam(teamSearch: String, localTeamName: ArrayList<String>): Flow<ApiResponse<List<TeamResponse>>> {
         return flow {
             try {
-                val responses = sportApiService.searchTeam(teamSearch)
+                val responses = apiService.searchTeam(teamSearch)
                 val dataArray = responses.team
                 val teamList = ArrayList<TeamResponse>()
                 if (dataArray != null) {
