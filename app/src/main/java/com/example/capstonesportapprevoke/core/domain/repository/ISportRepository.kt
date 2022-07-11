@@ -1,6 +1,6 @@
 package com.example.capstonesportapprevoke.core.domain.repository
 
-import com.bumptech.glide.load.engine.Resource
+import com.example.capstonesportapprevoke.core.data.Resource
 import com.example.capstonesportapprevoke.core.domain.model.Country
 import com.example.capstonesportapprevoke.core.domain.model.Sport
 import com.example.capstonesportapprevoke.core.domain.model.Team
