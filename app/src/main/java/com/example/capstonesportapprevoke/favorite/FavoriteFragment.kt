@@ -1,6 +1,5 @@
 package com.example.capstonesportapprevoke.favorite
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.core.ui.TeamFavoriteSportAdapter
-import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
-import com.example.capstonesportapprevoke.detail.DetailActivity
-import androidx.navigation.fragment.findNavController
-import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils.goToDetailScreen
+import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
 

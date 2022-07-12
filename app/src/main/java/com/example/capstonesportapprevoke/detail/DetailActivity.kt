@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.example.capstonesportapprevoke.R
@@ -73,9 +72,7 @@ class DetailActivity : AppCompatActivity() {
                 detailViewModel.setFavoriteSport(teamDetail, isFavorite)
                 setStatusFavorite(isFavorite)
             }
-            else -> {
-                findNavController(item.actionView.id).popBackStack()
-            }
+            else -> onBackPressed()
         }
         return super.onOptionsItemSelected(item)
     }
