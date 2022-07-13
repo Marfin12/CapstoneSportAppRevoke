@@ -9,14 +9,17 @@ import com.example.capstonesportapprevoke.home.HomeFragment
 import com.example.capstonesportapprevoke.home.HomeFragmentDirections
 
 object FragmentUtils {
+
+    var isFromFavoriteFragment = false
+
     fun goToDetailScreen(teamData: Team, favoriteFragment: FavoriteFragment) {
-        MainActivity.isFromFavoriteFragment = true
+        isFromFavoriteFragment = true
         val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailActivity(teamData)
         findNavController(favoriteFragment).navigate(action)
     }
 
     fun goToDetailScreen(teamData: Team, homeFragment: HomeFragment) {
-        MainActivity.isFromFavoriteFragment = false
+        isFromFavoriteFragment = false
         val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity(teamData)
         findNavController(homeFragment).navigate(action)
     }
