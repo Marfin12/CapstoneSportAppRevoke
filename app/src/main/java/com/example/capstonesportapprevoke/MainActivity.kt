@@ -38,9 +38,7 @@ class MainActivity : AppCompatActivity() {
             NavigationUI.setupWithNavController(navigationView, navController)
             setupActionBarWithNavController(navController, drawerLayout)
 
-            if (FragmentUtils.isFromFavoriteFragment) {
-                popupBackStackFavorite()
-            }
+            handleBackStackNavigation()
         }
     }
 
@@ -51,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun popupBackStackFavorite() {
-        navController.navigate(R.id.favoriteFragment)
+    private fun handleBackStackNavigation() {
+        if (FragmentUtils.isFromFavoriteFragment) navController.navigate(R.id.favoriteFragment)
     }
 }
