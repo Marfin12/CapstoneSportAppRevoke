@@ -1,7 +1,8 @@
 package com.example.capstonesportapprevoke.core.utils
 
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment.findNavController
-import com.example.capstonesportapprevoke.MainActivity
+import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.favorite.FavoriteFragment
 import com.example.capstonesportapprevoke.favorite.FavoriteFragmentDirections
@@ -22,5 +23,9 @@ object FragmentUtils {
         isFromFavoriteFragment = false
         val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity(teamData)
         findNavController(homeFragment).navigate(action)
+    }
+
+    fun handleBackStackNavigation(navController: NavController) {
+        if (isFromFavoriteFragment) navController.navigate(R.id.favoriteFragment)
     }
 }

@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils
+import com.example.capstonesportapprevoke.core.utils.FragmentUtils.handleBackStackNavigation
 import com.example.capstonesportapprevoke.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.view.*
@@ -36,9 +37,9 @@ class MainActivity : AppCompatActivity() {
             toolbar.setTitleTextColor(ContextCompat.getColor(applicationContext, com.google.android.material.R.color.design_default_color_background))
 
             NavigationUI.setupWithNavController(navigationView, navController)
-            setupActionBarWithNavController(navController, drawerLayout)
 
-            handleBackStackNavigation()
+            handleBackStackNavigation(navController)
+            setupActionBarWithNavController(navController, drawerLayout)
         }
     }
 
@@ -47,9 +48,5 @@ class MainActivity : AppCompatActivity() {
             navController,
             binding.drawerLayout
         )
-    }
-
-    private fun handleBackStackNavigation() {
-        if (FragmentUtils.isFromFavoriteFragment) navController.navigate(R.id.favoriteFragment)
     }
 }
