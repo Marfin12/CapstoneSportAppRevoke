@@ -7,6 +7,8 @@ import androidx.room.RoomDatabase
 import com.example.capstonesportapprevoke.core.data.source.local.entity.CountryEntity
 import com.example.capstonesportapprevoke.core.data.source.local.entity.SportEntity
 import com.example.capstonesportapprevoke.core.data.source.local.entity.TeamEntity
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 
 @Database(entities = [SportEntity::class, TeamEntity::class, CountryEntity::class], version = 3, exportSchema = false)
 abstract class SportDatabase : RoomDatabase() {
@@ -15,6 +17,8 @@ abstract class SportDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var INSTANCE: SportDatabase? = null
+        private val passphrase: ByteArray = SQLiteDatabase.getBytes("capstone".toCharArray())
+        private val factory = SupportFactory(passphrase)
 
         fun getInstance(context: Context): SportDatabase =
             INSTANCE ?: synchronized(this) {
@@ -24,6 +28,7 @@ abstract class SportDatabase : RoomDatabase() {
                     "Tourism.db"
                 )
                     .fallbackToDestructiveMigration()
+                    .openHelperFactory(factory)
                     .build()
                 INSTANCE = instance
                 instance
