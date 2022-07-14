@@ -16,28 +16,16 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import okhttp3.OkHttpClient
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class SportRepository(
+@Singleton
+class SportRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource,
     private val appExecutors: AppExecutors,
     private val okHttpClient: OkHttpClient
 ) : ISportRepository {
-
-    companion object {
-        @Volatile
-        private var instance: SportRepository? = null
-
-        fun getInstance(
-            remoteData: RemoteDataSource,
-            localData: LocalDataSource,
-            appExecutors: AppExecutors,
-            okHttpClient: OkHttpClient
-        ): SportRepository =
-            instance ?: synchronized(this) {
-                instance ?: SportRepository(remoteData, localData, appExecutors, okHttpClient)
-            }
-    }
 
     override fun getAllSport(): Flow<Resource<List<Sport>>> =
         object : NetworkBoundResource<List<Sport>, List<SportResponse>>() {

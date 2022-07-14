@@ -1,10 +1,6 @@
 <resources>
     <string name="favorite_fragment_label">Favorite Sport</string>
     <string name="menu_home">Sport</string>
-    <string name="subject">Subject</string>
-    <string name="your_message">Your Message…</string>
-    <string name="submit">Submit</string>
-    <string name="contact_us">Contact Us</string>
     <string name="blue_background">blue background</string>
     <string name="detail_seen">Detail Seen</string>
     <string name="total_default">0</string>
@@ -18,10 +14,8 @@
     <string name="home_event_sport">Event Sport</string>
     <string name="home_team_sport">Team Vs Team</string>
     <string name="menu_search_title">Search Sport</string>
-    <string name="map_box_access_token">pk.eyJ1IjoibWFyZmluZmFkaGlsYWgiLCJhIjoiY2tyN3pjMXNpMHN5bTJxbHBtMnIzZXA0dCJ9.sOzcHjtKIFYH_U6Bc5zlOA</string>
 
     <string name="empty_favorite_item">The favorite item is empty!</string>
-    <string name="filter_by_map">Filter by map</string>
 
     <string name="app_name">Sports</string>
     <string name="menu_favorite">Favorite</string>

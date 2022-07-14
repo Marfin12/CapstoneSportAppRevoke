@@ -6,11 +6,9 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.capstonesportapprevoke.core.utils.FragmentUtils
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils.handleBackStackNavigation
 import com.example.capstonesportapprevoke.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.main_fragment.*

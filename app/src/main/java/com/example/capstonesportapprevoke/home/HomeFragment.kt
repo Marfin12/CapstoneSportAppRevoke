@@ -1,13 +1,15 @@
 package com.example.capstonesportapprevoke.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.capstonesportapprevoke.MyApplication
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.data.Resource
 import com.example.capstonesportapprevoke.core.domain.model.Team
@@ -20,16 +22,19 @@ import com.example.capstonesportapprevoke.core.ui.TeamSearchAdapter
 import com.example.capstonesportapprevoke.core.ui.TeamSportAdapter
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils
 import com.example.capstonesportapprevoke.databinding.FragmentHomeBinding
-import com.example.capstonesportapprevoke.detail.DetailActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class HomeFragment : Fragment() {
 
-//    private val homeViewModel: HomeViewModel by viewModel()
+    @Inject
+    lateinit var factory: ViewModelFactory
 
-    private lateinit var homeViewModel: HomeViewModel
+    private val homeViewModel: HomeViewModel by viewModels {
+        factory
+    }
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -39,6 +44,11 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (requireActivity().application as MyApplication).appComponent.inject(this)
     }
 
     override fun onCreateView(
@@ -73,9 +83,6 @@ class HomeFragment : Fragment() {
             countryAdapter.onItemClick = { pos ->
                 observeTeamAdapter(teamSportAdapter, countryAdapter, defaultCategory, pos)
             }
-
-            val factory = ViewModelFactory.getInstance(requireActivity())
-            homeViewModel = ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
 
             observeCountryAdapter(countryAdapter, teamSportAdapter)
             observeSportAdapter(sportAdapter)

@@ -5,17 +5,9 @@ import com.example.capstonesportapprevoke.core.data.source.local.entity.SportEnt
 import com.example.capstonesportapprevoke.core.data.source.local.entity.TeamEntity
 import com.example.capstonesportapprevoke.core.data.source.local.room.SportDao
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class LocalDataSource(private val sportDao: SportDao) {
-
-    companion object {
-        private var instance: LocalDataSource? = null
-
-        fun getInstance(tourismDao: SportDao): LocalDataSource =
-            instance ?: synchronized(this) {
-                instance ?: LocalDataSource(tourismDao)
-            }
-    }
+class LocalDataSource @Inject constructor(private val sportDao: SportDao) {
 
     fun getAllSport(): Flow<List<SportEntity>> = sportDao.getAllSport()
 

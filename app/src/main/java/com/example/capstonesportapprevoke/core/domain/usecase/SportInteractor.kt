@@ -3,8 +3,9 @@ package com.example.capstonesportapprevoke.core.domain.usecase
 import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.core.domain.repository.ISportRepository
 import okhttp3.OkHttpClient
+import javax.inject.Inject
 
-class SportInteractor(private val sportRepository: ISportRepository): SportUseCase {
+class SportInteractor @Inject constructor(private val sportRepository: ISportRepository): SportUseCase {
     override fun getAllSport() = sportRepository.getAllSport()
 
     override fun getAllTeam() = sportRepository.getAllTeam()

@@ -3,16 +3,17 @@ package com.example.capstonesportapprevoke.detail
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
+import com.example.capstonesportapprevoke.MyApplication
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.databinding.ActivityDetailBinding
+import javax.inject.Inject
 import kotlin.properties.Delegates
-
 
 class DetailActivity : AppCompatActivity() {
 
@@ -23,17 +24,20 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var detailMenu: Menu
     private lateinit var teamDetail: Team
-    private lateinit var detailViewModel: DetailViewModel
+    @Inject
+    lateinit var factory: ViewModelFactory
+
+    private val detailViewModel: DetailViewModel by viewModels {
+        factory
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.title = ""
-
-        val factory = ViewModelFactory.getInstance(this)
-        detailViewModel = ViewModelProvider(this, factory)[DetailViewModel::class.java]
 
         teamDetail = args.teamData
         showSportDetail()
