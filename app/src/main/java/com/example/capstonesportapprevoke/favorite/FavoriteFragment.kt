@@ -5,18 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.core.ui.TeamFavoriteSportAdapter
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils.goToDetailScreen
 import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : Fragment() {
 
-//    private val favoriteViewModel: FavoriteViewModel by viewModel()
-
-    private lateinit var favoriteViewModel: FavoriteViewModel
+    private val favoriteViewModel: FavoriteViewModel by viewModel()
 
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
@@ -40,9 +37,6 @@ class FavoriteFragment : Fragment() {
                 teamFavoriteSportAdapter.onItemClick = { selectedData ->
                     goToDetailScreen(selectedData, this@FavoriteFragment)
                 }
-
-                val factory = ViewModelFactory.getInstance(requireActivity())
-                favoriteViewModel = ViewModelProvider(requireActivity(), factory)[FavoriteViewModel::class.java]
 
                 teamFavoriteSportAdapter.onFavClick = { selectedData ->
                     favoriteViewModel.removeFavoriteSport(selectedData)

@@ -8,15 +8,6 @@ import kotlinx.coroutines.flow.Flow
 
 class LocalDataSource(private val sportDao: SportDao) {
 
-    companion object {
-        private var instance: LocalDataSource? = null
-
-        fun getInstance(tourismDao: SportDao): LocalDataSource =
-            instance ?: synchronized(this) {
-                instance ?: LocalDataSource(tourismDao)
-            }
-    }
-
     fun getAllSport(): Flow<List<SportEntity>> = sportDao.getAllSport()
 
     fun getAllTeam(): Flow<List<TeamEntity>> = sportDao.getAllTeam()

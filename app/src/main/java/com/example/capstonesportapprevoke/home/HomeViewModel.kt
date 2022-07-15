@@ -1,7 +1,7 @@
 package com.example.capstonesportapprevoke.home
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import com.example.capstonesportapprevoke.core.data.Resource
 import com.example.capstonesportapprevoke.core.data.source.remote.network.ApiConfig
