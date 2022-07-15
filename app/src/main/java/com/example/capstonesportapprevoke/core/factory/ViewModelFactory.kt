@@ -8,23 +8,18 @@ import com.example.capstonesportapprevoke.di.AppScope
 import com.example.capstonesportapprevoke.favorite.FavoriteViewModel
 import com.example.capstonesportapprevoke.home.HomeViewModel
 import javax.inject.Inject
+import javax.inject.Provider
 
 @AppScope
-class ViewModelFactory @Inject constructor(private val sportUseCase: SportUseCase) :
-    ViewModelProvider.NewInstanceFactory() {
+class ViewModelFactory @Inject constructor(
+    private val creators: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>
+    ) : ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T =
-        when {
-            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-                HomeViewModel(sportUseCase) as T
-            }
-            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
-                FavoriteViewModel(sportUseCase) as T
-            }
-            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-                DetailViewModel(sportUseCase) as T
-            }
-            else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
-        }
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        val creator = creators[modelClass] ?: creators.entries.firstOrNull {
+            modelClass.isAssignableFrom(it.key)
+        }?.value ?: throw IllegalArgumentException("unknown model class $modelClass")
+        return creator.get() as T
+    }
 }

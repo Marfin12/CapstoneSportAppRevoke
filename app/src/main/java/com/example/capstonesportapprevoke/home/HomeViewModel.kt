@@ -13,9 +13,10 @@ import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.BroadcastChannel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
+import javax.inject.Inject
 
 
-class HomeViewModel(private val sportUseCase: SportUseCase) : ViewModel() {
+class HomeViewModel @Inject constructor(private val sportUseCase: SportUseCase) : ViewModel() {
     val sportAdapter = sportUseCase.getAllSport().asLiveData()
     val countryAdapter = sportUseCase.getAllCountry().asLiveData()
     val teamAdapter = sportUseCase.getAllTeam().asLiveData()
