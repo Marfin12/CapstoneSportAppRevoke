@@ -8,6 +8,7 @@ import com.example.capstonesportapprevoke.core.data.source.remote.network.ApiCon
 import com.example.capstonesportapprevoke.core.domain.model.Country
 import com.example.capstonesportapprevoke.core.domain.model.Team
 import com.example.capstonesportapprevoke.core.domain.usecase.SportUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.channels.BroadcastChannel
@@ -15,7 +16,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
-
+@HiltViewModel
 class HomeViewModel @Inject constructor(private val sportUseCase: SportUseCase) : ViewModel() {
     val sportAdapter = sportUseCase.getAllSport().asLiveData()
     val countryAdapter = sportUseCase.getAllCountry().asLiveData()

@@ -7,14 +7,13 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
-import com.example.capstonesportapprevoke.MyApplication
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.domain.model.Team
-import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.databinding.ActivityDetailBinding
-import javax.inject.Inject
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.properties.Delegates
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
 
     private val args : DetailActivityArgs by navArgs()
@@ -24,15 +23,10 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var detailMenu: Menu
     private lateinit var teamDetail: Team
-    @Inject
-    lateinit var factory: ViewModelFactory
 
-    private val detailViewModel: DetailViewModel by viewModels {
-        factory
-    }
+    private val detailViewModel: DetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)

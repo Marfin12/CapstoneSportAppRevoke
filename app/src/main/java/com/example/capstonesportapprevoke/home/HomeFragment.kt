@@ -1,6 +1,5 @@
 package com.example.capstonesportapprevoke.home
 
-import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.SearchView
@@ -9,11 +8,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.capstonesportapprevoke.MyApplication
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.data.Resource
 import com.example.capstonesportapprevoke.core.domain.model.Team
-import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.core.ui.CountryAdapter
 import com.example.capstonesportapprevoke.core.ui.CountryAdapter.Companion.defaultCountryIdx
 import com.example.capstonesportapprevoke.core.ui.SportAdapter
@@ -22,19 +19,15 @@ import com.example.capstonesportapprevoke.core.ui.TeamSearchAdapter
 import com.example.capstonesportapprevoke.core.ui.TeamSportAdapter
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils
 import com.example.capstonesportapprevoke.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
-    @Inject
-    lateinit var factory: ViewModelFactory
-
-    private val homeViewModel: HomeViewModel by viewModels {
-        factory
-    }
+    private val homeViewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -44,11 +37,6 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        (requireActivity().application as MyApplication).appComponent.inject(this)
     }
 
     override fun onCreateView(
