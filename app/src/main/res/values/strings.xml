@@ -22,14 +22,4 @@
 
     <string name="empty_favorite_item">The favorite item is empty!</string>
     <string name="filter_by_map">Filter by map</string>
-
-    <string name="app_name">Sports</string>
-    <string name="menu_favorite">Favorite</string>
-    <string name="detail_content_default">Long text Long text Long text Long text Long text
-    Long text Long text Long text Long text Long text Long text Long text Long text Long text
-    Long text Long text Long text Long text Long text Long text Long text Long text Long text
-    Long text </string>
-    <string name="favorite_image_desc">Favorite Image with heart icon</string>
-    <string name="share_image_desc">Share image which can share your favorite sport to external apps</string>
-    <string name="sport_image_desc">sport team emblem</string>
 </resources>

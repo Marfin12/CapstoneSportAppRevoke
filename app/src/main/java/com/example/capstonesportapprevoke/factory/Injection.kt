@@ -1,4 +1,4 @@
-package com.example.capstonesportapprevoke.core.factory
+package com.example.capstonesportapprevoke.factory
 
 import android.content.Context
 import com.example.capstonesportapprevoke.core.data.SportRepository

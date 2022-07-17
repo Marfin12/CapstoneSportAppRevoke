@@ -9,7 +9,7 @@ import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.example.capstonesportapprevoke.R
 import com.example.capstonesportapprevoke.core.domain.model.Team
-import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
+import com.example.capstonesportapprevoke.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.databinding.ActivityDetailBinding
 import kotlin.properties.Delegates
 

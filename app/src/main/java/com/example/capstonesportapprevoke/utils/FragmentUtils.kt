@@ -1,4 +1,4 @@
-package com.example.capstonesportapprevoke.core.utils
+package com.example.capstonesportapprevoke.utils
 
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment.findNavController

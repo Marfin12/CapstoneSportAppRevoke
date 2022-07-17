@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.capstonesportapprevoke.core.factory.ViewModelFactory
+import com.example.capstonesportapprevoke.factory.ViewModelFactory
 import com.example.capstonesportapprevoke.core.ui.TeamFavoriteSportAdapter
-import com.example.capstonesportapprevoke.core.utils.FragmentUtils.goToDetailScreen
+import com.example.capstonesportapprevoke.utils.FragmentUtils.goToDetailScreen
 import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {

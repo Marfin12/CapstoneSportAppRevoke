@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.example.capstonesportapprevoke.R
+import com.example.capstonesportapprevoke.core.R
+import com.example.capstonesportapprevoke.core.databinding.ItemFavoriteBinding
 import com.example.capstonesportapprevoke.core.domain.model.Team
-import com.example.capstonesportapprevoke.databinding.ItemFavoriteBinding
 
 class TeamFavoriteSportAdapter : RecyclerView.Adapter<TeamFavoriteSportAdapter.ListViewHolder>() {
 

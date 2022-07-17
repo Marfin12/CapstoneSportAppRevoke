@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstonesportapprevoke.R
-import com.example.capstonesportapprevoke.databinding.ItemAutoCompleteBinding
+import com.example.capstonesportapprevoke.core.R
+import com.example.capstonesportapprevoke.core.databinding.ItemAutoCompleteBinding
 
 class TeamSearchAdapter : RecyclerView.Adapter<TeamSearchAdapter.ListViewHolder>() {
 

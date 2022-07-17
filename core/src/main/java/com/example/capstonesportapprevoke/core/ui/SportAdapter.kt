@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
-import com.example.capstonesportapprevoke.R
+import com.example.capstonesportapprevoke.core.R
+import com.example.capstonesportapprevoke.core.databinding.ItemEventSportBinding
 import com.example.capstonesportapprevoke.core.domain.model.Sport
-import com.example.capstonesportapprevoke.databinding.ItemEventSportBinding
 import java.util.*
 
 open class SportAdapter : RecyclerView.Adapter<SportAdapter.ListViewHolder>() {

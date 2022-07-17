@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_favorite_full.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_share.xml" value="0.1" />
         <entry key="app/src/main/res/drawable-v24/ic_sport.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_favorite_full.xml" value="0.1" />
         <entry key="app/src/main/res/font/abhaya_libre.xml" value="0.13333333333333333" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.24770642201834864" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -30,10 +31,25 @@
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.11550151975683891" />
         <entry key="app/src/main/res/layout/placeholder_list_country.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/placeholder_list_sport.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/sport_list_placeholder.xml" value="0.1" />
         <entry key="app/src/main/res/menu/detail_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18796296296296297" />
+        <entry key="core/src/main/res/drawable/card_bg.xml" value="0.1395" />
+        <entry key="core/src/main/res/drawable/drawable.xml" value="0.1395" />
+        <entry key="core/src/main/res/drawable/ic_share.xml" value="0.1395" />
+        <entry key="core/src/main/res/drawable/ic_sport.xml" value="0.1395" />
+        <entry key="core/src/main/res/font/abhaya_libre.xml" value="0.25833333333333336" />
+        <entry key="core/src/main/res/layout/favorite_fragment_card_right_bar.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/favorite_fragment_card_sport_content.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/favorite_fragment_card_sport_image.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/item_auto_complete.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/item_country.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/item_event_sport.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/item_favorite.xml" value="0.1160081053698075" />
+        <entry key="core/src/main/res/layout/item_team_vs_team.xml" value="0.19610507246376813" />
+        <entry key="core/src/main/res/layout/layout.xml" value="0.19610507246376813" />
       </map>
     </option>
   </component>

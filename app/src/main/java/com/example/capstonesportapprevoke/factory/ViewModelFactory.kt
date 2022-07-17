@@ -1,10 +1,10 @@
-package com.example.capstonesportapprevoke.core.factory
+package com.example.capstonesportapprevoke.factory
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstonesportapprevoke.core.domain.usecase.SportUseCase
-import com.example.capstonesportapprevoke.core.factory.Injection.provideSportUseCase
+import com.example.capstonesportapprevoke.factory.Injection.provideSportUseCase
 import com.example.capstonesportapprevoke.detail.DetailViewModel
 import com.example.capstonesportapprevoke.favorite.FavoriteViewModel
 import com.example.capstonesportapprevoke.home.HomeViewModel

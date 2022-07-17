@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.capstonesportapprevoke.R
+import com.example.capstonesportapprevoke.core.R
+import com.example.capstonesportapprevoke.core.databinding.ItemCountryBinding
 import com.example.capstonesportapprevoke.core.domain.model.Country
-import com.example.capstonesportapprevoke.databinding.ItemCountryBinding
 import java.util.*
 
 open class CountryAdapter : RecyclerView.Adapter<CountryAdapter.ListViewHolder>() {
