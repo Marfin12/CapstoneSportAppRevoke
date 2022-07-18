@@ -32,4 +32,10 @@
             android:name="teamData"
             app:argType="com.example.capstonesportapprevoke.core.domain.model.Team" />
     </activity>
+    <fragment
+        android:id="@+id/newFeatureFragment"
+        android:name="com.example.capstonesportapprevoke.newFeature.NewFeatureFragment"
+        android:label="@string/new_feature_fragment_label"
+        tools:layout="@layout/fragment_new_feature" >
+    </fragment>
 </navigation>

@@ -14,8 +14,6 @@ import com.example.capstonesportapprevoke.databinding.FragmentFavoriteBinding
 
 class FavoriteFragment : Fragment() {
 
-//    private val favoriteViewModel: FavoriteViewModel by viewModel()
-
     private lateinit var favoriteViewModel: FavoriteViewModel
 
     private var _binding: FragmentFavoriteBinding? = null
@@ -26,7 +24,6 @@ class FavoriteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFavoriteBinding.inflate(inflater, container, false)
-//        loadKoinModules(favoriteModule)
         return binding.root
     }
 

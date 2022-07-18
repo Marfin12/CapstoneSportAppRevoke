@@ -32,4 +32,9 @@
     <string name="favorite_image_desc">Favorite Image with heart icon</string>
     <string name="share_image_desc">Share image which can share your favorite sport to external apps</string>
     <string name="sport_image_desc">sport team emblem</string>
+
+    <string name="menu_new">New Feature</string>
+    <string name="new_feature_fragment_label">Seen Sport</string>
+    <string name="empty_new_feature_item">You haven\'t read one of sport article yet!</string>
+
 </resources>
