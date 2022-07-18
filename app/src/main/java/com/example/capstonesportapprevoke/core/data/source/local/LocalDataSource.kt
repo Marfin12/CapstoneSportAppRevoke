@@ -30,7 +30,6 @@ class LocalDataSource @Inject constructor(private val sportDao: SportDao) {
 
     fun setFavoriteTeam(team: TeamEntity, newState: Boolean) {
         team.isFavorite = newState
-        team.isSeen = newState
         sportDao.updateTeam(team)
     }
 
