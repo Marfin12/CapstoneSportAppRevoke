@@ -5,17 +5,14 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.capstonesportapprevoke.core.utils.FragmentUtils
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils.goToNewFeatureFragment
 import com.example.capstonesportapprevoke.core.utils.FragmentUtils.handleBackStackNavigation
 import com.example.capstonesportapprevoke.databinding.ActivityMainBinding
