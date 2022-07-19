@@ -47,10 +47,16 @@ class MainActivity : AppCompatActivity() {
             navigationView.setNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.newFeatureFragment -> {
-                        Toast.makeText(
-                            applicationContext,"Module not installed yet", Toast.LENGTH_SHORT
-                        ).show()
-                        false
+                        try {
+                            NavigationUI.onNavDestinationSelected(it, navController)
+                            drawerLayout.closeDrawer(GravityCompat.START)
+                            true
+                        } catch (ex: Exception) {
+                            Toast.makeText(
+                                applicationContext,"Module not installed yet", Toast.LENGTH_SHORT
+                            ).show()
+                            false
+                        }
                     }
                     else -> {
                         NavigationUI.onNavDestinationSelected(it, navController)
@@ -69,13 +75,4 @@ class MainActivity : AppCompatActivity() {
             binding.drawerLayout
         )
     }
-
-//    override fun getDrawerToggleDelegate(): ActionBarDrawerToggle.Delegate? {
-//        return try {
-//            super.getDrawerToggleDelegate()
-//        } catch (ex: Exception) {
-//            println("hoorah!")
-//            null
-//        }
-//    }
 }
