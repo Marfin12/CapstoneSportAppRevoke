@@ -1,13 +1,10 @@
-package com.example.capstonesportapprevoke.core.factory
+package com.example.capstonesportapprevoke.newFeature
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.capstonesportapprevoke.core.domain.usecase.SportUseCase
 import com.example.capstonesportapprevoke.core.factory.Injection.provideSportUseCase
-import com.example.capstonesportapprevoke.detail.DetailViewModel
-import com.example.capstonesportapprevoke.favorite.FavoriteViewModel
-import com.example.capstonesportapprevoke.home.HomeViewModel
 
 class ViewModelFactory private constructor(private val sportUseCase: SportUseCase) :
     ViewModelProvider.NewInstanceFactory() {
@@ -27,14 +24,8 @@ class ViewModelFactory private constructor(private val sportUseCase: SportUseCas
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
         when {
-            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
-                HomeViewModel(sportUseCase) as T
-            }
-            modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
-                FavoriteViewModel(sportUseCase) as T
-            }
-            modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
-                DetailViewModel(sportUseCase) as T
+            modelClass.isAssignableFrom(NewFeatureViewModel::class.java) -> {
+                NewFeatureViewModel(sportUseCase) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

@@ -39,6 +39,8 @@
         <entry key="app/src/main/res/menu/detail_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/home_menu.xml" value="0.103125" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.18796296296296297" />
+        <entry key="newFeature/src/main/res/layout/fragment_new_feature.xml" value="0.1" />
+        <entry key="newFeature/src/main/res/layout/new_feature_fragment_empty.xml" value="0.1" />
       </map>
     </option>
   </component>

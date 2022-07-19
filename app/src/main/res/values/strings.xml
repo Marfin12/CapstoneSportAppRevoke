@@ -1,6 +1,4 @@
 <resources>
-    <string name="favorite_fragment_label">Favorite Sport</string>
-    <string name="menu_home">Sport</string>
     <string name="subject">Subject</string>
     <string name="your_message">Your Message…</string>
     <string name="submit">Submit</string>
@@ -17,14 +15,12 @@
     <string name="error_image_desc">error image shown when error appears</string>
     <string name="home_event_sport">Event Sport</string>
     <string name="home_team_sport">Team Vs Team</string>
-    <string name="menu_search_title">Search Sport</string>
     <string name="map_box_access_token">pk.eyJ1IjoibWFyZmluZmFkaGlsYWgiLCJhIjoiY2tyN3pjMXNpMHN5bTJxbHBtMnIzZXA0dCJ9.sOzcHjtKIFYH_U6Bc5zlOA</string>
 
     <string name="empty_favorite_item">The favorite item is empty!</string>
     <string name="filter_by_map">Filter by map</string>
 
     <string name="app_name">Sports</string>
-    <string name="menu_favorite">Favorite</string>
     <string name="detail_content_default">Long text Long text Long text Long text Long text
     Long text Long text Long text Long text Long text Long text Long text Long text Long text
     Long text Long text Long text Long text Long text Long text Long text Long text Long text
@@ -33,8 +29,12 @@
     <string name="share_image_desc">Share image which can share your favorite sport to external apps</string>
     <string name="sport_image_desc">sport team emblem</string>
 
+    <string name="menu_home">Sport</string>
+    <string name="menu_favorite">Favorite</string>
     <string name="menu_new">New Feature</string>
+    <string name="menu_search_title">Search Sport</string>
+
     <string name="new_feature_fragment_label">Seen Sport</string>
-    <string name="empty_new_feature_item">You haven\'t read one of sport article yet!</string>
+    <string name="favorite_fragment_label">Favorite Sport</string>
 
 </resources>

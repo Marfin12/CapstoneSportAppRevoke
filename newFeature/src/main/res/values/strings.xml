@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="new_feature_fragment_label">Seen Sport</string>
+    <string name="empty_new_feature_item">You haven\'t read one of sport article yet!</string>
+    <string name="title_newfeature">NewFeature</string>
+</resources>

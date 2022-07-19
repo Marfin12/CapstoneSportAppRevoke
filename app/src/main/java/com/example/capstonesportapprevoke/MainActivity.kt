@@ -2,9 +2,12 @@ package com.example.capstonesportapprevoke
 
 import android.os.Build
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
@@ -15,6 +18,7 @@ import com.example.capstonesportapprevoke.core.utils.FragmentUtils.handleBackSta
 import com.example.capstonesportapprevoke.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.android.synthetic.main.main_fragment.view.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +44,22 @@ class MainActivity : AppCompatActivity() {
 
             handleBackStackNavigation(navController)
             setupActionBarWithNavController(navController, drawerLayout)
+            navigationView.setNavigationItemSelectedListener {
+                when (it.itemId) {
+                    R.id.newFeatureFragment -> {
+                        Toast.makeText(
+                            applicationContext,"Module not installed yet", Toast.LENGTH_SHORT
+                        ).show()
+                        false
+                    }
+                    else -> {
+                        NavigationUI.onNavDestinationSelected(it, navController)
+                        drawerLayout.closeDrawer(GravityCompat.START)
+                        true
+                    }
+                }
+            }
+
         }
     }
 
@@ -49,4 +69,13 @@ class MainActivity : AppCompatActivity() {
             binding.drawerLayout
         )
     }
+
+//    override fun getDrawerToggleDelegate(): ActionBarDrawerToggle.Delegate? {
+//        return try {
+//            super.getDrawerToggleDelegate()
+//        } catch (ex: Exception) {
+//            println("hoorah!")
+//            null
+//        }
+//    }
 }
