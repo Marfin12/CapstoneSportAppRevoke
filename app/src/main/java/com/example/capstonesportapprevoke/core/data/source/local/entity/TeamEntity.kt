@@ -21,18 +21,18 @@ data class TeamEntity(
     @ColumnInfo(name = "sportCategory")
     var sportCategory: String,
 
+    @ColumnInfo(name = "country")
+    var country: String,
+
     @ColumnInfo(name = "image")
     var image: String,
 
-    @ColumnInfo(name = "country")
-    var country: String,
+    @ColumnInfo(name = "locaton")
+    var location: String,
 
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false,
 
     @ColumnInfo(name = "isSeen")
-    var isSeen: Boolean = false,
-
-    @ColumnInfo(name = "locaton")
-    var location: String,
+    var isSeen: Boolean = false
 )

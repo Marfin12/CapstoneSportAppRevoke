@@ -9,8 +9,8 @@ data class Team(
     val name: String,
     var description: String,
     val sportCategory: String,
-    val image: String,
     val country: String,
+    val image: String,
     val location: String,
     val isFavorite: Boolean,
     val isSeen: Boolean
