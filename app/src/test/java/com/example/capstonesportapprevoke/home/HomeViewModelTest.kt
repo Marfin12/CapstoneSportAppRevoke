@@ -76,9 +76,7 @@ class HomeViewModelTest {
     fun test_sportAdapter_livedata() = runBlockingTest {
         val dummyName = FakeApiService.dummyName
         val fakeApiService = FakeApiService()
-        val resultFlow = flow {
-            emit(Resource.Success(fakeApiService.getSportList().sports))
-        }
+        val resultFlow = fakeTestRepository.getAllSport()
         `when`(sportRepository.getAllSport()).thenReturn(resultFlow)
 
         val liveDataCountry = fakeTestRepository.getAllCountry()
@@ -97,13 +95,12 @@ class HomeViewModelTest {
         homeViewModel = HomeViewModel(sportUseCase)
         homeViewModel.sportAdapter.observeForever(mockObserver)
         verify(mockObserver).onChanged(captor.capture())
-        Assert.assertEquals(Resource.Success(fakeTestRepository.getAllSport())::class.java, captor.value::class.java)
+        Assert.assertEquals(Resource.Success(resultFlow)::class.java, captor.value::class.java)
 
         Assert.assertEquals(
             fakeApiService.getSportList().sports[0],
             captor.value.data!![0]
         )
-        Assert.assertEquals(2+3, 5)
     }
 
 }

@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.test.runBlockingTest
 import okhttp3.CertificatePinner
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -34,7 +35,7 @@ class FakeTestRepository : ISportRepository {
                 emit(Resource.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Main)
     }
 
     override fun getAllTeam(): Flow<Resource<List<Team>>> {
@@ -50,7 +51,7 @@ class FakeTestRepository : ISportRepository {
                 emit(Resource.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Main)
     }
 
     override fun getTeamFromCountry(countryName: String): Flow<Resource<List<Team>>> {
@@ -74,7 +75,7 @@ class FakeTestRepository : ISportRepository {
                 emit(Resource.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Main)
     }
 
     override fun getAllCountry(): Flow<Resource<List<Country>>> {
@@ -90,7 +91,7 @@ class FakeTestRepository : ISportRepository {
                 emit(Resource.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Main)
     }
 
     override fun getFavoriteTeam(): Flow<List<Team>> {
@@ -158,7 +159,7 @@ class FakeTestRepository : ISportRepository {
                 emit(Resource.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(Dispatchers.Main)
     }
 
     override fun getHttpClient(): OkHttpClient {
